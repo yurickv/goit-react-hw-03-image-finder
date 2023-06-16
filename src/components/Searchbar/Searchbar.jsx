@@ -1,4 +1,4 @@
-import { Formic } from 'formik';
+import { Formik } from 'formik';
 import { ImSearch } from 'react-icons/im';
 import { Header, SearchForm, SearchField, Button } from './Searchbar.styled';
 
@@ -11,13 +11,14 @@ export const Searchbar = ({ onSearch }) => {
             resetForm();
             return;
         }
+        alert('Type something!');
     }
 
 
 
     return (
         <Header >
-            <Formic
+            <Formik
                 onSubmit={Submit}
                 initialValues={{ search: '' }}
             >
@@ -25,8 +26,6 @@ export const Searchbar = ({ onSearch }) => {
 
                     <SearchField name="search"
                         type="text"
-                        autocomplete="off"
-                        autofocus
                         placeholder="Search images and photos"
                     />
 
@@ -35,7 +34,7 @@ export const Searchbar = ({ onSearch }) => {
                     </Button>
                 </SearchForm>
 
-            </Formic>
+            </Formik>
 
         </Header>
 
