@@ -34,12 +34,14 @@ export class App extends Component {
     const { search, page, } = this.state;
 
     if (prevState.page !== page || prevState.search !== search) {
+      if (prevState.search !== search) { this.setState({ status: 'pending' }); }
+
       this.axiosGetImages(search, page);
     }
   }
 
   axiosGetImages = async (search, page) => {
-    this.setState({ status: 'pending' });
+
     try {
       const { data } = await getItems(search, page);
 
