@@ -99,7 +99,7 @@ export class App extends Component {
         <Searchbar onSearch={this.handleSubmit} />
         {status === 'pending' && <Loader />}
         {status === 'resolved' && (<ImageGallery pictures={images} onOpenModal={this.openModal} />)}
-        {status === 'rejected' && <p className={appStyle}>{error}</p>}
+        {status === 'rejected' && <p style={appStyle}>{error}</p>}
         {showButton && (<Button morePictures={this.addPage} />)}
         {showModal &&
           <Modal
@@ -116,12 +116,13 @@ export class App extends Component {
 
 
 const appStyle = {
-  height: '100vh',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  fontSize: 40,
-  color: '#010101'
+  //   height: '100vh',
+  //   display: 'flex',
+  //   flexDirection: 'column',
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  fontSize: 30,
+  textAlign: 'center',
+  //   color: '#010101'
 }
 
